@@ -19,10 +19,17 @@ jobs:
           aws-secret-access-key: SfI8NPRY+do21wDzSFLwZjJrQ+TupWnFn3E27MeN
           aws-region: us-east-2 # Specify your desired AWS region
 
+      # - name: Deploy CloudFormation Stack
+      #   run: |
+      #     aws cloudformation deploy \
+      #       -- template-file Cloudformation/Ec2-Stack.yml \
+      #       -- stack-name my-ec2-stack
+      #       -- capabilities CAPABILITY_NAMED_IAM
+            
       - name: Deploy CloudFormation Stack
-        run: |
-          aws cloudformation deploy \
-            -- template-file Cloudformation/Ec2-Stack.yml \
-            -- stack-name my-ec2-stack
-            -- capabilities CAPABILITY_NAMED_IAM
+        uses: aws-actions/aws-cloudformation-github-deploy@v1
+        with:
+          name: MyEC2InstanceStack
+          template: Cloudformation/Ec2-Stack.yml
+          capabilities: CAPABILITY_NAMED_IAM
             
