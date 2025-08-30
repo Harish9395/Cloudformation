@@ -18,8 +18,7 @@ Resources:
       ImageId: ami-0b016c703b95ecbe4
       InstanceType: !Ref InstanceType
       KeyName: !Ref KeyName
-      SubnetId: 
-        - subnet-0c5abac3208265f58
+      SubnetId: subnet-0c5abac3208265f58
       SecurityGroupIds: 
         - sg-01ea42659da4a681a
       Tags:
