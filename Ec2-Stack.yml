@@ -3,9 +3,9 @@ Description: A basic CloudFormation template to launch an EC2 instance.
 
 Parameters:
   KeyName:
-    Type: Awstestkey
+    Type: String
     Description: Name of an existing EC2 KeyPair to enable SSH access to the instance.
-    Default: 
+    Default: Awstestkey
   InstanceType:
     Type: String
     Default: t2.micro
