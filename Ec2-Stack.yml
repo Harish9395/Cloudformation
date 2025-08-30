@@ -28,6 +28,3 @@ Outputs:
   InstanceId:
     Description: The Instance ID of the newly created EC2 instance.
     Value: !Ref MyEC2Instance
-  PublicIp:
-    Description: The Public IP address of the newly created EC2 instance.
-    Value: !Fn::GetAtt MyEC2Instance.PublicIp
