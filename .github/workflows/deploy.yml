@@ -1,0 +1,28 @@
+name: Deploy Cloudformation Template
+
+on:
+  push:
+    branches:
+      - master
+      
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: AKIAY6FNIOF22B7R2D7M
+          aws-secret-access-key: SfI8NPRY+do21wDzSFLwZjJrQ+TupWnFn3E27MeN
+          aws-region: us-east-2 # Specify your desired AWS region
+
+      - name: Deploy CloudFormation Stack
+        run: |
+          aws cloudformation deploy \
+            -- template-file cloudformation/Ec2-stack.yml \
+            -- stack-name my-ec2-stack
+            -- capabilities CAPABILITY_NAMED_IAM
+            
