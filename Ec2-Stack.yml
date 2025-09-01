@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: A basic CloudFormation template to launch an EC2 instance.
+Description: A basic CloudFormation template to launch an EC2 instance
 
 Parameters:
   KeyName:
